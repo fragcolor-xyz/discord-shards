@@ -10,4 +10,8 @@ crate-type = ["cdylib"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-shards = { git = "https://github.com/fragcolor-xyz/shards.git", features = ["run_bindgen", "dllblock"] }
+compile-time-crc32 = "0.1.2"
+lazy_static = "1.4.0"
+ctor = { git = "https://github.com/chainblocks/rust-ctor", rev = "755fd2eaca76c89f9b66e570128de2f635a87584" }
+shards = { path = "../chainblocks/rust", features = ["run_bindgen", "dllshard"] }
+serenity = {version = "0.11" }

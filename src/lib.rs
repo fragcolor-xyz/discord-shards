@@ -1,3 +1,16 @@
+use ctor::ctor;
+use shards::core::{init, registerShard};
+
+mod shards_impl;
+
+#[ctor]
+fn register_shards() {
+    use shards_impl::bot::BotShard;
+
+    init();
+    registerShard::<BotShard>();
+}
+
 #[cfg(test)]
 mod tests {
     #[test]
